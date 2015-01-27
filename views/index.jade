@@ -3,3 +3,18 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  h2 Database status
+  if dbaddress
+    p Configured to connect to 
+      b #{dbaddress}
+  else
+    p Not configured
+
+  h2 Port status
+  if ports
+    ul
+    each port in ports
+      li=port
+  else
+    p No ports available.
